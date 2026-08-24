@@ -4,7 +4,7 @@ Industrial **DNC over Wi-Fi** for CNC machine tools: an ESP32 that sits on the m
 
 FreeRTOS, six concurrent tasks, hardware and software flow control, no cloud, no PC required.
 
-Built by [Kaiki Quadros](https://github.com/dev-kaiki) at SMI, published with the company's permission.
+Built by [Kaiki Quadros Ferreira](https://github.com/dev-kaiki) at SMI, published with the company's permission.
 Companion project to [`dnc-serial-engine`](https://github.com/dev-kaiki/dnc-serial-engine) — the same problem solved on a desktop, and here on bare metal.
 
 ---
