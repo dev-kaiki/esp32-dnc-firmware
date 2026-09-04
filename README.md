@@ -86,8 +86,15 @@ Arduino IDE or `arduino-cli` with the **arduino-esp32** core. Board: *ESP32 Dev 
 
 ```bash
 arduino-cli compile --fqbn esp32:esp32:esp32 .
-arduino-cli upload  --fqbn esp32:esp32:esp32 -p COM3 .
+arduino-cli upload  --fqbn esp32:esp32:esp32 -p COM3 .          # Windows
+arduino-cli upload  --fqbn esp32:esp32:esp32 -p /dev/cu.usbserial-0001 .   # macOS
 ```
+
+`arduino-cli board list` prints the port name, which is the only thing that
+differs between the three hosts. On macOS the board shows up under `/dev/cu.*`
+and not `/dev/tty.*`: the `tty` device blocks on open waiting for carrier
+detect, and a USB-serial bridge never asserts it, so the upload appears to hang
+forever on a port that is in fact fine.
 
 On first boot the device starts an access point:
 
